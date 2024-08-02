@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install git -y
+
+rm -rf ~/Git-Monitor
+git clone https://github.com/Techmokid/Git-Monitor.git ~/Git-Monitor
+
+cd ~/Git-Monitor
+python run.py

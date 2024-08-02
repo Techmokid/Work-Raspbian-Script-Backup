@@ -1,0 +1,10 @@
+#!/bin/bash
+# Check if Docker is running and start it if it's not
+if (! docker stats --no-stream ); then
+  echo "Starting Docker..."
+  sudo service docker start
+fi
+
+# Run the Selenium Docker container with Firefox
+sudo docker run -d -p 4444:4444 selenium/standalone-firefox:latest
+echo "Selenium Server is starting..."
